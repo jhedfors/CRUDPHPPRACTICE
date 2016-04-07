@@ -22,8 +22,12 @@ session_start();
         <option value="sanjose">San Jose</option>
         <option value="burbank">Burbank</option>
       </select>
+      <input type="date" name="dob" value="">
       <textarea name="comment" rows="8" cols="40"></textarea>
       <input type="submit" value="Submit">
     </form>
+    <a href = 'users_index.php'>
+      <button>Return to Index</button>
+     </a>
   </body>
 </html>

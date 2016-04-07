@@ -1,7 +1,14 @@
 <?php
 session_start();
-// You goal is to fix this!
-var_dump($_POST);
+
+$_SESSION['users'][$_POST['user_id']] = $_POST;
+var_dump($_SESSION['users']);
+
+echo "    <a href = 'users_index.php'>
+      <button>Return to Index</button>
+     </a>";
+
+//
 die("This update function needs work - fix it!");
 
 header("Location:users_index.php");

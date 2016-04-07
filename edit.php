@@ -24,9 +24,14 @@ session_start();
         <option value="sanjose">San Jose</option>
         <option value="burbank">Burbank</option>
       </select>
+      <label for="dob">DOB</label><input type="date" name="dob" value="<?= $_SESSION['users'][$_POST['user_id']]['dob'] ?>" >
       <textarea name="comment" rows="8" cols="40"><?= $_SESSION['users'][$_POST['user_id']]['comment'] ?></textarea>
       <input type="hidden" name="user_id" value="<?= $_POST['user_id']?>">
       <input type="submit" value="Submit">
     </form>
+
+    <a href = 'users_index.php'>
+      <button>Return to Index</button>
+     </a>
   </body>
 </html>

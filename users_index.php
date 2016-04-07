@@ -11,19 +11,24 @@ session_start();
     <?php
     if (isset($_SESSION['users'])){
       foreach ($_SESSION['users'] as $user_id => $user){
-      ?>
-      <h5>Name: <?= $user['name'] ?> </h5>
-      <form action = "show.php" method = "post">
-        <input type="hidden" name="user_id" value= "<?= $user_id ?>">
-        <input type="submit" value="Show User">
-      </form>
-      <form action = "edit.php" method = "post">
-        <input type="hidden" name="user_id" value= "<?= $user_id ?>">
-        <input type="submit" value="Edit User">
-      </form>
-      <?php
+        if (isset($user['name'])) {//added a addition isset check
+          ?>
+          <h5>Name: <?= $user['name'] ?> </h5>
+          <form action = "show.php" method = "post">
+            <input type="hidden" name="user_id" value= "<?= $user_id ?>">
+            <input type="submit" value="Show User">
+          </form>
+          <form action = "edit.php" method = "post">
+            <input type="hidden" name="user_id" value= "<?= $user_id ?>">
+            <input type="submit" value="Edit User">
+          </form>
+          <?php
+        }
+
       }
     }
+
+
     ?>
     <a href = 'new.php'>
       <button>Create a new user</button>
